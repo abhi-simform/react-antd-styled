@@ -1,4 +1,4 @@
-This is a NextJS + Ant Design + Styled Components boilerplate.
+This is a React + Ant Design + Styled Components boilerplate.
 
 ## Getting Started
 
