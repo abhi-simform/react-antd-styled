@@ -9,7 +9,6 @@ import Home from '@/pages/dashboard/home/page'
 export const router = createBrowserRouter([
   {
     element: <DashboardLayout />,
-    path: '/',
     children: [
       {
         path: '/',
@@ -20,7 +19,6 @@ export const router = createBrowserRouter([
   },
   {
     element: <AuthLayout />,
-    path: '/',
     children: [
       {
         path: 'signin',
