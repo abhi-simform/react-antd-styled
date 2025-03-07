@@ -1,11 +1,16 @@
+import { Typography } from 'antd'
 import { Input, FormItem, Form, InputPassword, Button } from '@/components/Ant'
-import { SignInStyles } from './signin.styles'
 
 export default function Signin() {
   return (
-    <SignInStyles>
-      <p className="title">Signin</p>
-      <p className="info">Don’t have an account? Sign Up</p>
+    <div>
+      <Typography.Title>Signin</Typography.Title>
+      <Typography.Paragraph>
+        Don’t have an account?{' '}
+        <Button type="link" href="/auth/signup">
+          Sign Up
+        </Button>
+      </Typography.Paragraph>
       <Form layout="vertical">
         <FormItem label="Email" required>
           <Input placeholder="input placeholder" />
@@ -19,6 +24,6 @@ export default function Signin() {
           </Button>
         </FormItem>
       </Form>
-    </SignInStyles>
+    </div>
   )
 }

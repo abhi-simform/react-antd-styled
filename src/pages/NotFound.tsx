@@ -1,13 +1,20 @@
-import { Link } from 'react-router-dom'
+import { Button, Flex, Typography } from 'antd'
+import { useNavigate } from 'react-router-dom'
 
 function NotFound() {
+  const navigate = useNavigate()
   return (
-    <div>
-      <h1>Nothing to see here!</h1>
-      <p>
-        <Link to="/">Go to the home page</Link>
-      </p>
-    </div>
+    <Flex align="center" justify="center" style={{ height: '100vh' }} vertical>
+      <img src="/images/logo.svg" alt="logo" className="d-inline-block" width={200} />
+      <Typography.Title level={1} className="mt-24">
+        Nothing to see here!
+      </Typography.Title>
+      <Typography.Paragraph>
+        <Button type="link" onClick={() => navigate('/')}>
+          Go back to the home page
+        </Button>
+      </Typography.Paragraph>
+    </Flex>
   )
 }
 

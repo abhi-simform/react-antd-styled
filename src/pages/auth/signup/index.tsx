@@ -1,11 +1,16 @@
+import { Typography } from 'antd'
 import { InputPassword, Form, Input, Button, FormItem } from '@/components/Ant'
-import { SignUpStyles } from './signup.styles'
 
 export default function Signup() {
   return (
-    <SignUpStyles>
-      <p className="title">Signup</p>
-      <p className="info">Already have an account? Sign In</p>
+    <div>
+      <Typography.Title>Signup</Typography.Title>
+      <Typography.Paragraph>
+        Already have an account?{' '}
+        <Button type="link" href="/auth/signin">
+          Sign In
+        </Button>
+      </Typography.Paragraph>
       <Form layout="vertical">
         <FormItem label="First Name" required>
           <Input type="text" placeholder="Enter first name" />
@@ -28,6 +33,6 @@ export default function Signup() {
           </Button>
         </FormItem>
       </Form>
-    </SignUpStyles>
+    </div>
   )
 }

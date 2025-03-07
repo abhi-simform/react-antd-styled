@@ -1,30 +1,43 @@
-import { createBrowserRouter } from 'react-router-dom'
-import AuthLayout from '@/pages/auth'
+import { createBrowserRouter, Navigate } from 'react-router-dom'
 import Signin from '@/pages/auth/signin'
 import Signup from '@/pages/auth/signup'
 import NotFound from '@/pages/NotFound'
-import DashboardLayout from '@/pages/dashboard'
-import Home from '@/pages/dashboard/home/page'
+import Home from '@/pages/dashboard/home'
+import Auth from '@/layouts/auth'
+import Dashboard from '@/layouts/dashboard'
+import About from '@/pages/dashboard/about'
 
 export const router = createBrowserRouter([
   {
-    element: <DashboardLayout />,
+    element: <Dashboard />,
     path: '/',
     children: [
       {
-        path: '/',
         index: true,
+        element: <Navigate to="home" replace />
+      },
+      {
+        path: 'home',
         element: <Home />
+      },
+      {
+        path: 'about',
+        element: <About />
       }
     ]
   },
   {
-    element: <AuthLayout />,
+    element: <Auth />,
     path: 'auth',
     children: [
       {
+        index: true,
+        element: <Navigate to="signin" replace />
+      },
+      {
         path: 'signin',
-        element: <Signin />
+        element: <Signin />,
+        index: true
       },
       {
         path: 'signup',

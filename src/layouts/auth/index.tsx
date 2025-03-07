@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom'
 import { AuthStyles } from './auth.styles'
 
-export default function AuthLayout() {
+export default function Auth() {
   return (
     <AuthStyles>
       <aside className="aside" />
